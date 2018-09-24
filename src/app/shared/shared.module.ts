@@ -39,6 +39,7 @@ import {
 } from '@angular/material';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { NavigationComponent } from './navigation/navigation.component';
+import { TranslateModule} from '@ngx-translate/core';
 @NgModule({
   imports: [
     CommonModule,
@@ -76,7 +77,8 @@ import { NavigationComponent } from './navigation/navigation.component';
     MatTabsModule,
     MatToolbarModule,
     MatTooltipModule,
-    MatTreeModule
+    MatTreeModule,
+    TranslateModule.forChild()
   ],
   exports: [
     CommonModule,
@@ -114,7 +116,8 @@ import { NavigationComponent } from './navigation/navigation.component';
     MatTabsModule,
     MatToolbarModule,
     MatTooltipModule,
-    MatTreeModule
+    MatTreeModule,
+    TranslateModule
   ],
   declarations: [NotFoundComponent, NavigationComponent]
 })
