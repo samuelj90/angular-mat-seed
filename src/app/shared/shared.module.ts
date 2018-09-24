@@ -42,6 +42,8 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { TranslateModule} from '@ngx-translate/core';
 import { ThemePickerComponent } from './navigation/theme-picker/theme-picker.component';
 import { LanguagePickerComponent } from './navigation/language-picker/language-picker.component';
+import { FullScreenTooglerComponent } from './navigation/full-screen-toogler/full-screen-toogler.component';
+import { ProfileMenuComponent } from './navigation/profile-menu/profile-menu.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -83,6 +85,8 @@ import { LanguagePickerComponent } from './navigation/language-picker/language-p
     TranslateModule.forChild()
   ],
   exports: [
+    NotFoundComponent,
+    NavigationComponent,
     CommonModule,
     MatAutocompleteModule,
     MatBadgeModule,
@@ -121,6 +125,6 @@ import { LanguagePickerComponent } from './navigation/language-picker/language-p
     MatTreeModule,
     TranslateModule
   ],
-  declarations: [NotFoundComponent, NavigationComponent, ThemePickerComponent, LanguagePickerComponent]
+  declarations: [NotFoundComponent, NavigationComponent, ThemePickerComponent, LanguagePickerComponent, FullScreenTooglerComponent, ProfileMenuComponent]
 })
 export class SharedModule { }

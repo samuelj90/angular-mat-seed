@@ -1,3 +1,11 @@
-<p>
-  language-picker works!
-</p>
+<button class="hidden-sm" mat-icon-button [matMenuTriggerFor]="language">
+  <mat-icon>language</mat-icon>
+</button>
+<mat-menu #language="matMenu">
+  <button mat-menu-item (click)="changeLanguage('en')">
+    <span>{{ 'English' | translate }}</span>
+  </button>
+  <button mat-menu-item (click)="changeLanguage('ml')">
+    <span>{{ 'Malayalam' | translate }}</span>
+  </button>
+</mat-menu>

@@ -1,3 +1,29 @@
-<p>
-  navigation works!
-</p>
+<mat-toolbar color="primary" class="app-toolbar">
+  <mat-toolbar-row>
+    <div>
+      <button type="button" mat-icon-button (click)="drawer.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+    </div>
+    <div class="toolbar-app-title">
+      <span>{{title| translate }}</span>
+    </div>
+    <div class="toolbar-more-menu">
+      <app-full-screen-toogler></app-full-screen-toogler>
+      <app-language-picker></app-language-picker>
+      <app-theme-picker></app-theme-picker>
+      <app-profile-menu></app-profile-menu>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav #drawer fixedInViewport="true" [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" mode="over"
+               [opened]="!(isHandset$ | async)">
+
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <ng-content select="[content]"></ng-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
