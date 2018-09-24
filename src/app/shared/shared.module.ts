@@ -37,6 +37,7 @@ import {
   MatTooltipModule,
   MatTreeModule
 } from '@angular/material';
+import { NotFoundComponent } from './not-found/not-found.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -114,6 +115,6 @@ import {
     MatTooltipModule,
     MatTreeModule
   ],
-  declarations: []
+  declarations: [NotFoundComponent]
 })
 export class SharedModule { }
