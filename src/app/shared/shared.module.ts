@@ -40,6 +40,8 @@ import {
 import { NotFoundComponent } from './not-found/not-found.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { TranslateModule} from '@ngx-translate/core';
+import { ThemePickerComponent } from './navigation/theme-picker/theme-picker.component';
+import { LanguagePickerComponent } from './navigation/language-picker/language-picker.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -119,6 +121,6 @@ import { TranslateModule} from '@ngx-translate/core';
     MatTreeModule,
     TranslateModule
   ],
-  declarations: [NotFoundComponent, NavigationComponent]
+  declarations: [NotFoundComponent, NavigationComponent, ThemePickerComponent, LanguagePickerComponent]
 })
 export class SharedModule { }
