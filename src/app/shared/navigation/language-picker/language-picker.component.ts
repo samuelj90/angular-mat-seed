@@ -1,4 +1,7 @@
 import {Component, OnInit} from '@angular/core';
+import {TranslateService} from '@ngx-translate/core';
+import {SiteLanguage} from './site-language';
+import {LanguageStorageService} from './language-storage/language-storage.service';
 
 @Component({
   selector: 'app-language-picker',
@@ -7,13 +10,20 @@ import {Component, OnInit} from '@angular/core';
 })
 export class LanguagePickerComponent implements OnInit {
 
-  constructor() {
+  siteLanguages: SiteLanguage[] = [{languageKey: 'en'}, {languageKey: 'ml'}];
+
+  constructor(private translate: TranslateService, private  languageStorageService: LanguageStorageService) {
   }
 
   ngOnInit() {
+    this.translate.addLangs(this.siteLanguages.map((language) => {
+      return language.languageKey;
+    }));
+    this.translate.setDefaultLang(this.languageStorageService.getStoredLanguage().languageKey);
   }
 
-  changeLanguage(language: string) {
-
+  changeLanguage(language: SiteLanguage) {
+    this.translate.use(language.languageKey);
+    this.languageStorageService.storeLanguage(language);
   }
 }

@@ -2,10 +2,7 @@
   <mat-icon>language</mat-icon>
 </button>
 <mat-menu #language="matMenu">
-  <button mat-menu-item (click)="changeLanguage('en')">
-    <span>{{ 'English' | translate }}</span>
-  </button>
-  <button mat-menu-item (click)="changeLanguage('ml')">
-    <span>{{ 'Malayalam' | translate }}</span>
+  <button mat-menu-item *ngFor="let language of siteLanguages" (click)="changeLanguage(language)">
+    <span>{{ language.languageKey | translate }}</span>
   </button>
 </mat-menu>
