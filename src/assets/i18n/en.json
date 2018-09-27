@@ -1,4 +1,15 @@
 {
-  "en": "English",
-  "ml": "Malayalam"
+  "app-title": "ANGULAR MATERIAL",
+  "languages": {
+    "en": "English",
+    "ml": "Malayalam"
+  },
+  "navigation": {
+    "dashboard": "Dashboard"
+  },
+  "feature": {
+    "dashboard": {
+      "page-title": "Dashboard"
+    }
+  }
 }

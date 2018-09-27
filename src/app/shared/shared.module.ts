@@ -39,11 +39,13 @@ import {
 } from '@angular/material';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { NavigationComponent } from './navigation/navigation.component';
-import { TranslateModule} from '@ngx-translate/core';
+import { TranslateModule } from '@ngx-translate/core';
 import { ThemePickerComponent } from './navigation/theme-picker/theme-picker.component';
 import { LanguagePickerComponent } from './navigation/language-picker/language-picker.component';
 import { FullScreenTooglerComponent } from './navigation/full-screen-toogler/full-screen-toogler.component';
 import { ProfileMenuComponent } from './navigation/profile-menu/profile-menu.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -82,6 +84,7 @@ import { ProfileMenuComponent } from './navigation/profile-menu/profile-menu.com
     MatToolbarModule,
     MatTooltipModule,
     MatTreeModule,
+    FlexLayoutModule,
     TranslateModule.forChild()
   ],
   exports: [
@@ -123,8 +126,17 @@ import { ProfileMenuComponent } from './navigation/profile-menu/profile-menu.com
     MatToolbarModule,
     MatTooltipModule,
     MatTreeModule,
+    FlexLayoutModule,
     TranslateModule
   ],
-  declarations: [NotFoundComponent, NavigationComponent, ThemePickerComponent, LanguagePickerComponent, FullScreenTooglerComponent, ProfileMenuComponent]
+  declarations: [
+    NotFoundComponent,
+    NavigationComponent,
+    ThemePickerComponent,
+    LanguagePickerComponent,
+    FullScreenTooglerComponent,
+    ProfileMenuComponent
+  ]
 })
-export class SharedModule { }
+export class SharedModule {
+}

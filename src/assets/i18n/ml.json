@@ -1,4 +1,15 @@
 {
-  "en": "ഇംഗ്ലീഷ്",
-  "ml": "മലയാളം"
+  "app-title": "അംഗുലാർ മെറ്റീരിയൽ",
+  "languages": {
+    "en": "ഇംഗ്ലീഷ്",
+    "ml": "മലയാളം"
+  },
+  "navigation": {
+    "dashboard": "ഡാഷ്ബോർഡ്"
+  },
+  "feature": {
+    "dashboard": {
+      "page-title": "ഡാഷ്ബോർഡ്"
+    }
+  }
 }
