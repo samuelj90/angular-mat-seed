@@ -1,13 +1,12 @@
 .fil-between {
   flex: 1 1 auto;
 }
-.sidenav-content{
-  height: 100vh;
-}
-.sidenav-menu{
+
+.sidenav-menu {
   min-width: 300px;
 }
-.sidenav-container{
+
+.app-container {
   display: flex;
   flex-direction: column;
   position: absolute;
@@ -15,12 +14,22 @@
   bottom: 0;
   left: 0;
   right: 0;
-  height: 100vh;
+  mat-toolbar {
+    position: fixed;
+    /* Make sure the toolbar will stay on top of the content as it scrolls past. */
+    z-index: 2;
+  }
+
+  mat-sidenav-container {
+    /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
+       causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
+    flex: 1;
+  }
+  mat-sidenav {
+    mat-icon {
+      margin-right: 16px;
+    }
+  }
 }
 
-mat-toolbar{
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-}
+
