@@ -35,4 +35,34 @@ export class ThemeStorageService {
     } catch (e) {
     }
   }
+
+  public getAllThemes(): SiteTheme[] {
+    return [
+      {
+        primaryColur: '#673AB7',
+        accentColur: '#FFC107',
+        href: 'deeppurple-amber.css',
+        isDark: false,
+      },
+      {
+        primaryColur: '#3F51B5',
+        accentColur: '#E91E63',
+        href: 'indigo-pink.css',
+        isDark: false,
+        isDefault: true,
+      },
+      {
+        primaryColur: '#E91E63',
+        accentColur: '#607D8B',
+        href: 'pink-bluegrey.css',
+        isDark: true,
+      },
+      {
+        primaryColur: '#9C27B0',
+        accentColur: '#4CAF50',
+        href: 'purple-green.css',
+        isDark: true,
+      },
+    ];
+  }
 }

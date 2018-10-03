@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, ElementRef, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-full-screen-toogler',
@@ -14,6 +14,15 @@ export class FullScreenTooglerComponent implements OnInit {
   }
 
   toggleFullscreen() {
-
+    const elem = document.querySelector('body') as any;
+    if (elem.requestFullscreen) {
+      elem.requestFullscreen();
+    } else if (elem.webkitRequestFullScreen) {
+      elem.webkitRequestFullScreen();
+    } else if (elem.mozRequestFullScreen) {
+      elem.mozRequestFullScreen();
+    } else if (elem.msRequestFullScreen) {
+      elem.msRequestFullScreen();
+    }
   }
 }

@@ -44,7 +44,6 @@ import { ThemePickerComponent } from './navigation/theme-picker/theme-picker.com
 import { LanguagePickerComponent } from './navigation/language-picker/language-picker.component';
 import { FullScreenTooglerComponent } from './navigation/full-screen-toogler/full-screen-toogler.component';
 import { ProfileMenuComponent } from './navigation/profile-menu/profile-menu.component';
-import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   imports: [
@@ -84,7 +83,6 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatToolbarModule,
     MatTooltipModule,
     MatTreeModule,
-    FlexLayoutModule,
     TranslateModule.forChild()
   ],
   exports: [
@@ -126,7 +124,6 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatToolbarModule,
     MatTooltipModule,
     MatTreeModule,
-    FlexLayoutModule,
     TranslateModule
   ],
   declarations: [

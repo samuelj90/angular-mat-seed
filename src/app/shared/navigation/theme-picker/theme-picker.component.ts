@@ -1,4 +1,7 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { SiteTheme } from './site-theme';
+import { ThemeStorageService } from './theme-storage/theme-storage.service';
+import { StyleManagerService } from './style-manager/style-manager.service';
 
 @Component({
   selector: 'app-theme-picker',
@@ -8,41 +11,34 @@ import {Component, OnInit} from '@angular/core';
 export class ThemePickerComponent implements OnInit {
   currentTheme;
 
-  themes = [
-    {
-      primary: '#673AB7',
-      accent: '#FFC107',
-      href: 'deeppurple-amber.css',
-      isDark: false,
-    },
-    {
-      primary: '#3F51B5',
-      accent: '#E91E63',
-      href: 'indigo-pink.css',
-      isDark: false,
-      isDefault: true,
-    },
-    {
-      primary: '#E91E63',
-      accent: '#607D8B',
-      href: 'pink-bluegrey.css',
-      isDark: true,
-    },
-    {
-      primary: '#9C27B0',
-      accent: '#4CAF50',
-      href: 'purple-green.css',
-      isDark: true,
-    },
-  ];
+  themes: SiteTheme[];
 
-  constructor() {
+  constructor(private styleManagerService: StyleManagerService, private themeStorageService: ThemeStorageService) {
   }
 
   ngOnInit() {
+    this.themes = this.themeStorageService.getAllThemes();
+    const currentTheme = this.themeStorageService.getStoredTheme();
+    if (currentTheme) {
+      this.updateTheme(currentTheme);
+    }
   }
 
   updateTheme(theme) {
+    this.currentTheme = this.getCurrentThemeFromHref(theme.href);
 
+    if (theme.isDefault) {
+      this.styleManagerService.removeStyle('theme');
+    } else {
+      this.styleManagerService.setStyle('theme', `assets/themes/${theme.href}`);
+    }
+
+    if (this.currentTheme) {
+      this.themeStorageService.storeTheme(this.currentTheme);
+    }
+  }
+
+  private getCurrentThemeFromHref(href: string): SiteTheme {
+    return this.themes.find(theme => theme.href === href);
   }
 }
