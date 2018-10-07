@@ -44,6 +44,7 @@ import { ThemePickerComponent } from './navigation/theme-picker/theme-picker.com
 import { LanguagePickerComponent } from './navigation/language-picker/language-picker.component';
 import { FullScreenTooglerComponent } from './navigation/full-screen-toogler/full-screen-toogler.component';
 import { ProfileMenuComponent } from './navigation/profile-menu/profile-menu.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
@@ -83,6 +84,8 @@ import { ProfileMenuComponent } from './navigation/profile-menu/profile-menu.com
     MatToolbarModule,
     MatTooltipModule,
     MatTreeModule,
+    FormsModule,
+    ReactiveFormsModule,
     TranslateModule.forChild()
   ],
   exports: [
@@ -124,6 +127,8 @@ import { ProfileMenuComponent } from './navigation/profile-menu/profile-menu.com
     MatToolbarModule,
     MatTooltipModule,
     MatTreeModule,
+    FormsModule,
+    ReactiveFormsModule,
     TranslateModule
   ],
   declarations: [
